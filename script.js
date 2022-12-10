@@ -2,12 +2,12 @@
 function draw() {
   ctx.fillStyle = '#6bd8ff'
   ctx.font = '10px Verdana'
-  ctx.fillText('Dog', 0, 25)
+  ctx.fillText('Hire me!', 0, 25)
 }
 
 const offset = {
   x: 100,
-  y: 0,
+  y: -200,
 }
 
 const connectDots = true
@@ -36,7 +36,6 @@ ctx.scale(dpr, dpr)
 
 canvas.style.width = `${canvasRect.width}px`
 canvas.style.height = `${canvasRect.height}px`
-
 draw()
 
 let particles = []
@@ -52,7 +51,7 @@ window.addEventListener('mousemove', (event) => {
   mouse.y = event.y
 })
 
-const textCords = ctx.getImageData(0, 0, 50, 50)
+const textCords = ctx.getImageData(0, 0, canvas.width, canvas.height)
 
 class Particle {
   constructor(x, y, r, g, b) {
@@ -159,3 +158,5 @@ function connect() {
     }
   }
 }
+
+init()
